@@ -39,27 +39,37 @@
         </audio>
         <button class="k-button" onclick="playMe()">play music</button>
         <button class="k-button" onclick="stopMe()">pause music</button>
+        <button class="k-button" onclick="restartMe()">restart music</button>
         <br />
         <br />
         <br />
         <br />
     </div>
     <script>
-        setTimeout(function f() {
-            var vid = document.getElementById("myAudio");
-            vid.currentTime = 7;
+        //setTimeout(function f() {
+        //    var vid = document.getElementById("myAudio");
+        //    vid.currentTime = 7;
            
-        }, 100);
-
+        //}, 100);
+        globalFirstClick = 0;
         function playMe() {
             //debugger;
             var vid = document.getElementById("myAudio");
-            //vid.currentTime = 7;
+            if (globalFirstClick == 0) {
+                vid.currentTime = 8;
+            }
+            globalFirstClick++;
             vid.play();
         }
         function stopMe() {
             var vid = document.getElementById("myAudio");
             vid.pause();
+        }
+
+        function restartMe() {
+            var vid = document.getElementById("myAudio");
+            vid.currentTime = 8;
+            vid.play();
         }
 
     </script>
