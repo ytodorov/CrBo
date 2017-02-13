@@ -32,7 +32,19 @@
         <br />
         Yordan
     </h1>
+    <div class="text-center">
+        <audio id="myAudio" controls="controls">
+            <source src="~/02-madonna-get_together.mp3" type="audio/mpeg" />
+        </audio>
+    </div>
+    <script>
+        setTimeout(function f() {
+            var vid = document.getElementById("myAudio");
+            vid.currentTime = 7;
+            vid.play();
+        }, 5000);
 
+    </script>
 </body>
 </html>
 
