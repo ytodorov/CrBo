@@ -9,7 +9,8 @@
     <link rel="icon" type="image/x-icon" href="~/favicon.png">
 </head>
 <body>
-
+    <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.3.1028/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.3.1028/styles/kendo.metro.min.css">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <style>
         img {
@@ -33,16 +34,33 @@
         Yordan
     </h1>
     <div class="text-center">
-        <audio id="myAudio" controls="controls">
+        <audio id="myAudio" controls="controls" style="display:none" >
             <source src="~/02-madonna-get_together.mp3" type="audio/mpeg" />
         </audio>
+        <button class="k-button" onclick="playMe()">play music</button>
+        <button class="k-button" onclick="stopMe()">pause music</button>
+        <br />
+        <br />
+        <br />
+        <br />
     </div>
     <script>
         setTimeout(function f() {
             var vid = document.getElementById("myAudio");
             vid.currentTime = 7;
+           
+        }, 100);
+
+        function playMe() {
+            //debugger;
+            var vid = document.getElementById("myAudio");
+            //vid.currentTime = 7;
             vid.play();
-        }, 5000);
+        }
+        function stopMe() {
+            var vid = document.getElementById("myAudio");
+            vid.pause();
+        }
 
     </script>
 </body>
